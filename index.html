@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính điểm đại học khối D</h2>
+    
+    <form action="get">
+        <label for="math">
+            Môn Toán: 
+            <input type="number" name="math" id="math">
+        </label>
+        <br/>
+        <label for="literature">
+            Môn Văn: 
+            <input type="number" name="literature" id="literature">
+        </label>
+        <br/>
+        <label for="english">
+            Môn Anh: 
+            <input type="number" name="english" id="english">
+        </label>
+        <br>
+        <select name="area" id="area">
+            <option value="0.75">KV1</option>
+            <option value="0.5">KV2-NT</option>
+            <option value="0.25">KV2</option>
+            <option value="0">KV3</option>
+        </select>
+
+        <button type="button" onclick="calculations()">Tính điểm</button>
+    </form>
+    
+    <p id="score"></p>
+
+    <script>
+        function calculations() {
+            let math = parseFloat(document.getElementById("math").value);
+            let literature = parseFloat(document.getElementById("literature").value);
+            let english = parseFloat(document.getElementById("english").value);
+            let area = parseFloat(document.getElementById("area").value);
+            let score = math + literature + english + area;
+
+            document.getElementById("score").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + score;
+        }
+    </script>
+</body>
+</html>
